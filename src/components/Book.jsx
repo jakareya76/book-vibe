@@ -2,10 +2,10 @@ import { FaRegStar } from "react-icons/fa6";
 import { Link } from "react-router-dom";
 
 const Book = ({ book }) => {
-  const { bookName, author, image, rating, tags, category } = book;
+  const { bookId, bookName, author, image, rating, tags, category } = book;
 
   return (
-    <Link to="/newlink">
+    <Link to={`/book-details/${bookId}`}>
       <div className="p-5 border rounded-xl">
         <div className="bg-[#F3F3F3] rounded-xl w-[326px] h-[230px] p-10 flex items-center justify-center">
           <img src={image} alt="book-img" className="w-[135px]" />
