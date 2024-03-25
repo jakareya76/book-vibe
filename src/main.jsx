@@ -7,15 +7,18 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Home from "./pages/Home.jsx";
 import ListedBooks from "./pages/ListedBooks.jsx";
 import PagesToRead from "./pages/PagesToRead.jsx";
+import ErrorPage from "./pages/ErrorPage.jsx";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <App />,
+    errorElement: <ErrorPage />,
     children: [
       {
         index: true,
         element: <Home />,
+        loader: () => fetch("./books.json"),
       },
       {
         path: "/listed-books",
