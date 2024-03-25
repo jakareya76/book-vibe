@@ -2,11 +2,15 @@ import { Link, NavLink } from "react-router-dom";
 
 const Navbar = () => {
   return (
-    <header className="container mx-auto">
+    <header className="container mx-auto my-5">
       <nav className="navbar bg-base-100">
         <div className="navbar-start">
           <div className="dropdown">
-            <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
+            <div
+              tabIndex={0}
+              role="button"
+              className="btn btn-ghost mr-3 lg:hidden"
+            >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 className="h-5 w-5"
@@ -26,15 +30,38 @@ const Navbar = () => {
               tabIndex={0}
               className="menu menu-sm dropdown-content mt-3 z-[1] p-5 gap-4 shadow bg-base-100 rounded-box w-52"
             >
-              <li>
-                <NavLink to="/">Home</NavLink>
-              </li>
-              <li>
-                <NavLink to="/listed-books">Listed Books</NavLink>
-              </li>
-              <li>
-                <NavLink to="/pages-to-read">Pages to Read</NavLink>
-              </li>
+              <NavLink
+                to="/"
+                className={({ isActive }) =>
+                  isActive
+                    ? "bg-white py-2 px-4 rounded-md text-green-500 border border-green-500"
+                    : "text-black py-2 px-4 rounded-md"
+                }
+              >
+                Home
+              </NavLink>
+
+              <NavLink
+                to="/listed-books"
+                className={({ isActive }) =>
+                  isActive
+                    ? "bg-white py-2 px-4 rounded-md text-green-500 border border-green-500"
+                    : "text-black py-2 px-4 rounded-md"
+                }
+              >
+                Listed Books
+              </NavLink>
+
+              <NavLink
+                to="/pages-to-read"
+                className={({ isActive }) =>
+                  isActive
+                    ? "bg-white py-2 px-4 rounded-md text-green-500 border border-green-500"
+                    : "text-black py-2 px-4 rounded-md"
+                }
+              >
+                Pages to Read
+              </NavLink>
             </ul>
           </div>
           <Link to="/" className="text-xl font-bold">
@@ -42,16 +69,39 @@ const Navbar = () => {
           </Link>
         </div>
         <div className="navbar-center hidden lg:flex">
-          <ul className="menu menu-horizontal px-1 gap-4">
-            <li>
-              <NavLink to="/">Home</NavLink>
-            </li>
-            <li>
-              <NavLink to="/listed-books">Listed Books</NavLink>
-            </li>
-            <li>
-              <NavLink to="/pages-to-read">Pages to Read</NavLink>
-            </li>
+          <ul className="menu menu-horizontal text-xl px-1 gap-4">
+            <NavLink
+              to="/"
+              className={({ isActive }) =>
+                isActive
+                  ? "bg-white py-2 px-4 rounded-md text-green-500 border border-green-500"
+                  : "text-black py-2 px-4 rounded-md"
+              }
+            >
+              Home
+            </NavLink>
+
+            <NavLink
+              to="/listed-books"
+              className={({ isActive }) =>
+                isActive
+                  ? "bg-white py-2 px-4 rounded-md text-green-500 border border-green-500"
+                  : "text-black py-2 px-4 rounded-md"
+              }
+            >
+              Listed Books
+            </NavLink>
+
+            <NavLink
+              to="/pages-to-read"
+              className={({ isActive }) =>
+                isActive
+                  ? "bg-white py-2 px-4 rounded-md text-green-500 border border-green-500"
+                  : "text-black py-2 px-4 rounded-md"
+              }
+            >
+              Pages to Read
+            </NavLink>
           </ul>
         </div>
         <div className="navbar-end gap-4">
