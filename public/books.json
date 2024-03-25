@@ -1,0 +1,82 @@
+{
+  "books": [
+    {
+      "bookId": 1,
+      "bookName": "The Great Gatsby",
+      "author": "F. Scott Fitzgerald",
+      "image": "./1.png",
+      "review": "The Great Gatsby is a captivating portrayal of the Jazz Age in America, offering a glimpse into the lives of the wealthy and the pursuit of the elusive American Dream. Through the eyes of the enigmatic Jay Gatsby, Fitzgerald explores themes of love, ambition, and the corrupting influence of wealth. The lavish parties, intricate relationships, and tragic ending make this novel a timeless classic that continues to resonate with readers today.",
+      "totalPages": 180,
+      "rating": 4.5,
+      "category": "Fiction",
+      "tags": ["Classics", "Romance"],
+      "publisher": "Scribner",
+      "yearOfPublishing": 1925
+    },
+    {
+      "bookId": 2,
+      "bookName": "1984",
+      "author": "George Orwell",
+      "image": "./2.png",
+      "review": "1984 is a chilling depiction of a dystopian society where totalitarianism reigns supreme and individual freedom is a distant memory. Orwell's portrayal of a surveillance state, constant propaganda, and thought control serves as a stark warning about the dangers of unchecked government power. The protagonist's struggle against oppression and the hauntingly realistic setting make this novel a must-read for anyone interested in exploring themes of political control and the erosion of personal liberty.",
+      "totalPages": 328,
+      "rating": 4.7,
+      "category": "Science Fiction",
+      "tags": ["Dystopian", "Political"],
+      "publisher": "Secker & Warburg",
+      "yearOfPublishing": 1949
+    },
+    {
+      "bookId": 3,
+      "bookName": "To Kill a Mockingbird",
+      "author": "Harper Lee",
+      "image": "./3.png",
+      "review": "To Kill a Mockingbird is a profound exploration of racial injustice, moral growth, and the complexities of human nature. Set in the American South during the 1930s, Harper Lee's masterpiece follows young Scout Finch as she learns about empathy, integrity, and the importance of standing up for what is right. Through the trial of Tom Robinson and the wisdom of her father, Atticus Finch, Scout gains a deeper understanding of the world around her and the power of compassion.",
+      "totalPages": 281,
+      "rating": 4.8,
+      "category": "Fiction",
+      "tags": ["Coming-of-age", "Legal drama"],
+      "publisher": "J. B. Lippincott & Co.",
+      "yearOfPublishing": 1960
+    },
+    {
+      "bookId": 4,
+      "bookName": "The Catcher in the Rye",
+      "author": "J.D. Salinger",
+      "image": "./4.png",
+      "review": "The Catcher in the Rye is a poignant coming-of-age story that captures the disillusionment and alienation of adolescence. Through the rebellious and introspective voice of Holden Caulfield, Salinger explores themes of identity, authenticity, and the search for meaning in a conformist society. As Holden navigates the streets of New York City and encounters various characters, readers are invited to reflect on their own struggles with growing up and finding their place in the world.",
+      "totalPages": 224,
+      "rating": 4.3,
+      "category": "Fiction",
+      "tags": ["Coming-of-age", "Psychological"],
+      "publisher": "Little, Brown and Company",
+      "yearOfPublishing": 1951
+    },
+    {
+      "bookId": 5,
+      "bookName": "Pride and Prejudice",
+      "author": "Jane Austen",
+      "image": "./5.png",
+      "review": "Pride and Prejudice is a delightful comedy of manners that explores themes of love, marriage, and social class in Regency England. Austen's sharp wit and keen observation of human behavior shine through in the spirited exchanges between Elizabeth Bennet and Mr. Darcy. As the characters navigate misunderstandings and societal expectations, readers are treated to a charming romance that continues to captivate audiences centuries after its initial publication.",
+      "totalPages": 279,
+      "rating": 4.6,
+      "category": "Fiction",
+      "tags": ["Romance", "Satire"],
+      "publisher": "T. Egerton, Whitehall",
+      "yearOfPublishing": 1813
+    },
+    {
+      "bookId": 6,
+      "bookName": "The Hobbit",
+      "author": "J.R.R. Tolkien",
+      "image": "./6.png",
+      "review": "The Hobbit is a timeless adventure that transports readers to the enchanting world of Middle-earth. With its colorful characters, epic quests, and rich mythology, Tolkien's classic tale has captured the imagination of generations. From the humble beginnings of Bilbo Baggins to the discovery of the One Ring, this epic journey is filled with danger, excitement, and moments of unexpected heroism. Whether you're a fan of fantasy or simply love a good adventure, The Hobbit is sure to leave you spellbound.",
+      "totalPages": 310,
+      "rating": 4.9,
+      "category": "Fantasy",
+      "tags": ["Adventure", "Quest"],
+      "publisher": "George Allen & Unwin",
+      "yearOfPublishing": 1937
+    }
+  ]
+}
