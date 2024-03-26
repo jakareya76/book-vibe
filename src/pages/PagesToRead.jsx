@@ -1,4 +1,12 @@
-import { BarChart, Bar, XAxis, YAxis, Tooltip, CartesianGrid } from "recharts";
+import {
+  BarChart,
+  Bar,
+  XAxis,
+  YAxis,
+  Tooltip,
+  CartesianGrid,
+  ResponsiveContainer,
+} from "recharts";
 import { getLocalBooksData } from "../utility/localStorageData";
 
 const bookData = getLocalBooksData();
@@ -28,14 +36,16 @@ const TriangleBar = (props) => {
 const PagesToRead = () => {
   return (
     <div className="p-20 bg-base-200 rounded-xl">
-      <BarChart width={600} height={400} data={data}>
-        <CartesianGrid strokeDasharray="3 3" />
+      <ResponsiveContainer height={400}>
+        <BarChart data={data}>
+          <CartesianGrid strokeDasharray="3 3" />
 
-        <XAxis dataKey="name" />
-        <YAxis />
-        <Tooltip />
-        <Bar dataKey="pages" fill="#8884d8" shape={<TriangleBar />} />
-      </BarChart>
+          <XAxis dataKey="name" />
+          <YAxis />
+          <Tooltip />
+          <Bar dataKey="pages" fill="#8884d8" shape={<TriangleBar />} />
+        </BarChart>
+      </ResponsiveContainer>
     </div>
   );
 };
