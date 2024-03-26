@@ -6,6 +6,11 @@ import "react-toastify/dist/ReactToastify.css";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 
+import {
+  getLocalBooksData,
+  getLocalWishlistBooks,
+} from "./utility/localStorageData";
+
 export const BookContext = createContext({
   read: [],
   wishlist: [],
@@ -14,14 +19,17 @@ export const BookContext = createContext({
 });
 
 const App = () => {
-  const [read, setRead] = useState([]);
-  const [wishlist, setWishlist] = useState([]);
+  const [read, setRead] = useState(getLocalBooksData());
+  const [wishlist, setWishlist] = useState(getLocalWishlistBooks());
 
   const handleAddToRead = (book) => {
     if (!read.some((item) => item.bookId === book.bookId)) {
       setRead((prev) => {
-        return [...prev, book];
+        const updatedRead = [...prev, book];
+        localStorage.setItem("Books_Read_List", JSON.stringify(updatedRead));
+        return updatedRead;
       });
+
       toast.success("Book Added To Read List");
     } else {
       toast.error("Book Already Exist In Read List");
@@ -36,7 +44,9 @@ const App = () => {
 
     if (!wishlist.some((item) => item.bookId === book.bookId)) {
       setWishlist((prev) => {
-        return [...prev, book];
+        const updatedRead = [...prev, book];
+        localStorage.setItem("Books_Wishlist", JSON.stringify(updatedRead));
+        return updatedRead;
       });
 
       toast.success("Book Added To Wishlist");
@@ -44,8 +54,6 @@ const App = () => {
       toast.error("Book Already Exist In Wishlist");
     }
   };
-
-  console.log(read);
 
   return (
     <BookContext.Provider
