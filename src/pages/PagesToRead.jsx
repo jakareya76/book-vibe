@@ -9,13 +9,6 @@ import {
 } from "recharts";
 import { getLocalBooksData } from "../utility/localStorageData";
 
-const bookData = getLocalBooksData();
-
-const data = bookData.map((book) => ({
-  name: book.bookName,
-  pages: book.totalPages,
-}));
-
 const getPath = (x, y, width, height) => {
   return `M${x},${y + height}C${x + width / 3},${y + height} ${x + width / 2},${
     y + height / 3
@@ -34,6 +27,13 @@ const TriangleBar = (props) => {
 };
 
 const PagesToRead = () => {
+  const bookData = getLocalBooksData();
+
+  const data = bookData.map((book) => ({
+    name: book.bookName,
+    pages: book.totalPages,
+  }));
+
   return (
     <div className="p-20 bg-base-200 rounded-xl">
       <ResponsiveContainer height={400}>

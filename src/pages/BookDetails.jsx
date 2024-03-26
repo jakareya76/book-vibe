@@ -1,6 +1,6 @@
 import { useState, useEffect, useContext } from "react";
 import { useParams } from "react-router-dom";
-import { BookContext } from "../App";
+import { BookContext } from "../contexts/BookContext";
 
 const BookDetails = () => {
   const [books, setBooks] = useState([]);
