@@ -6,7 +6,7 @@ const BookDetails = () => {
   const [books, setBooks] = useState([]);
   const [bookObj, setBookObj] = useState(null);
 
-  const { handleAddToRead } = useContext(BookContext);
+  const { handleAddToRead, handleAddToWishlist } = useContext(BookContext);
 
   const { id } = useParams();
   const idInt = parseInt(id);
@@ -107,7 +107,10 @@ const BookDetails = () => {
           >
             Read
           </button>
-          <button className="px-8 py-4 bg-[#50B1C9] text-white text-xl font-medium border-2 rounded-lg">
+          <button
+            onClick={() => handleAddToWishlist(bookObj)}
+            className="px-8 py-4 bg-[#50B1C9] text-white text-xl font-medium border-2 rounded-lg"
+          >
             Wishlist
           </button>
         </div>

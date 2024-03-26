@@ -7,23 +7,23 @@ const Book = ({ book }) => {
   return (
     <Link to={`/book-details/${bookId}`}>
       <div className="p-5 border rounded-xl">
-        <div className="bg-[#F3F3F3] rounded-xl w-[326px] h-[230px] p-10 flex items-center justify-center">
+        <div className="bg-[#F3F3F3] rounded-xl max-w-[326px] h-[230px] p-10 flex items-center justify-center">
           <img src={image} alt="book-img" className="w-[135px]" />
         </div>
         <div className="flex items-center gap-5 my-5 font-semibold text-[#23BE0A]">
           {tags.map((tag, idx) => {
             return (
-              <span key={idx} className="bg-green-100 py-2 px-5 rounded-full">
+              <span key={idx} className="px-5 py-2 bg-green-100 rounded-full">
                 {tag}
               </span>
             );
           })}
         </div>
-        <h2 className="text-2xl font-bold font-serif">{bookName}</h2>
-        <p className="text-lg my-2 font-medium">
+        <h2 className="font-serif text-2xl font-bold">{bookName}</h2>
+        <p className="my-2 text-lg font-medium">
           By : <span>{author}</span>
         </p>
-        <div className="border border-dashed my-4"></div>
+        <div className="my-4 border border-dashed"></div>
 
         <div className="flex items-center justify-between">
           <h3 className="text-lg font-medium">{category}</h3>

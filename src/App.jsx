@@ -1,6 +1,8 @@
 import { useState, createContext } from "react";
-
 import { Outlet } from "react-router-dom";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 
@@ -20,13 +22,27 @@ const App = () => {
       setRead((prev) => {
         return [...prev, book];
       });
+      toast.success("Book Added To Read List");
     } else {
-      console.log("Do NOt Add");
+      toast.error("Book Already Exist In Read List");
     }
   };
 
   const handleAddToWishlist = (book) => {
-    console.log(book);
+    if (read.some((item) => item.bookId === book.bookId)) {
+      toast.error("Book Already Exist In Read List");
+      return;
+    }
+
+    if (!wishlist.some((item) => item.bookId === book.bookId)) {
+      setWishlist((prev) => {
+        return [...prev, book];
+      });
+
+      toast.success("Book Added To Wishlist");
+    } else {
+      toast.error("Book Already Exist In Wishlist");
+    }
   };
 
   console.log(read);
@@ -40,6 +56,7 @@ const App = () => {
         <Outlet />
       </main>
       <Footer />
+      <ToastContainer />
     </BookContext.Provider>
   );
 };
