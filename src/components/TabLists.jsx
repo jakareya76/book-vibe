@@ -1,13 +1,48 @@
-import ListedBookCard from "./ListedBookCard";
+import { useState, useEffect } from "react";
+import { isEqual } from "lodash";
 
 import {
   getLocalBooksData,
   getLocalWishlistBooks,
 } from "../utility/localStorageData";
 
-const TabLists = () => {
-  const readedBooks = getLocalBooksData();
-  const wishlistBooks = getLocalWishlistBooks();
+import ListedBookCard from "./ListedBookCard";
+
+const TabLists = ({ sortBy }) => {
+  const [readedBooks, setReadedBooks] = useState([]);
+  const [wishlistBooks, setWishlistBooks] = useState([]);
+
+  useEffect(() => {
+    // Function to sort books
+    const sortBooks = (books, criteria) => {
+      switch (criteria) {
+        case "rating":
+          return books.slice().sort((a, b) => b.rating - a.rating);
+        case "numberOfPages":
+          return books.slice().sort((a, b) => a.totalPages - b.totalPages);
+        case "publisherYear":
+          return books
+            .slice()
+            .sort((a, b) => a.yearOfPublishing - b.yearOfPublishing);
+        default:
+          return books.slice();
+      }
+    };
+
+    const localReadedBooks = getLocalBooksData();
+    const localWishlistBooks = getLocalWishlistBooks();
+
+    const sortedReadedBooks = sortBooks(localReadedBooks, sortBy);
+    const sortedWishlistBooks = sortBooks(localWishlistBooks, sortBy);
+
+    if (
+      !isEqual(sortedReadedBooks, readedBooks) ||
+      !isEqual(sortedWishlistBooks, wishlistBooks)
+    ) {
+      setReadedBooks(sortedReadedBooks);
+      setWishlistBooks(sortedWishlistBooks);
+    }
+  }, [sortBy]);
 
   return (
     <div role="tablist" className="tabs tabs-lifted">

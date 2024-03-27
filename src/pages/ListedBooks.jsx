@@ -1,18 +1,23 @@
+import { useState } from "react";
 import TabLists from "../components/TabLists";
 
 const ListedBooks = () => {
+  const [sortBy, setSortBy] = useState("SortBy");
+
+  const handleSortChange = (event) => {
+    setSortBy(event.target.value);
+  };
+
   return (
     <>
       <div className="p-10 my-8 bg-zinc-100 rounded-xl">
         <h2 className="text-4xl font-semibold text-center ">Books</h2>
       </div>
 
-      <div
-        className="flex items-center justify-center mb-16"
-        defaultValue="SortBy"
-      >
+      <div className="flex items-center justify-center mb-16">
         <select
-          defaultValue="SortBy"
+          value={sortBy}
+          onChange={handleSortChange}
           className="bg-[#23BE0A] border-none outline-none text-white select select-info"
         >
           <option value="SortBy" className="text-black bg-white" disabled>
@@ -30,7 +35,7 @@ const ListedBooks = () => {
         </select>
       </div>
 
-      <TabLists />
+      <TabLists sortBy={sortBy} />
     </>
   );
 };
