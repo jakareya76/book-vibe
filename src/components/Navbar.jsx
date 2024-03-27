@@ -9,11 +9,11 @@ const Navbar = () => {
             <div
               tabIndex={0}
               role="button"
-              className="btn btn-ghost mr-3 lg:hidden"
+              className="mr-3 btn btn-ghost lg:hidden"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                className="h-5 w-5"
+                className="w-5 h-5"
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke="currentColor"
@@ -68,8 +68,8 @@ const Navbar = () => {
             Book Vibe
           </Link>
         </div>
-        <div className="navbar-center hidden lg:flex">
-          <ul className="menu menu-horizontal text-xl px-1 gap-4">
+        <div className="hidden navbar-center lg:flex">
+          <ul className="gap-4 px-1 text-xl menu menu-horizontal">
             <NavLink
               to="/"
               className={({ isActive }) =>
@@ -102,9 +102,31 @@ const Navbar = () => {
             >
               Pages to Read
             </NavLink>
+
+            <NavLink
+              to="/blogs"
+              className={({ isActive }) =>
+                isActive
+                  ? "bg-white py-2 px-4 rounded-md text-green-500 border border-green-500"
+                  : "text-black py-2 px-4 rounded-md"
+              }
+            >
+              Blogs
+            </NavLink>
+
+            <NavLink
+              to="/contact"
+              className={({ isActive }) =>
+                isActive
+                  ? "bg-white py-2 px-4 rounded-md text-green-500 border border-green-500"
+                  : "text-black py-2 px-4 rounded-md"
+              }
+            >
+              Contact Us
+            </NavLink>
           </ul>
         </div>
-        <div className="navbar-end gap-4">
+        <div className="gap-4 navbar-end">
           <a className="btn bg-[#23BE0A] text-white hover:bg-[#49a13c]">
             Sign In
           </a>
