@@ -28,11 +28,14 @@ const ListedBookCard = ({ book }) => {
         <p className="my-2 text-lg font-medium">
           By : <span>{author}</span>
         </p>
-        <div className="flex flex-wrap items-center gap-5 my-5 font-semibold text-[#23BE0A]">
-          <h2 className="text-xl font-bold text-black">Tag:</h2>
+        <div className="flex flex-wrap items-center gap-5 my-5 font-semibold">
+          <h2 className="text-xl font-bold">Tag:</h2>
           {tags.map((tag, idx) => {
             return (
-              <span key={idx} className="px-5 py-2 bg-green-100 rounded-full">
+              <span
+                key={idx}
+                className="px-5 py-2 bg-base-200 text-[#23BE0A] rounded-full"
+              >
                 #{tag}
               </span>
             );
@@ -40,7 +43,7 @@ const ListedBookCard = ({ book }) => {
           <div className="flex items-center gap-2">
             <img src={locationIcon} alt="icon" />
 
-            <h2 className="font-medium text-black">
+            <h2 className="font-medium">
               Year of Publishing: {yearOfPublishing}
             </h2>
           </div>
@@ -57,10 +60,10 @@ const ListedBookCard = ({ book }) => {
         </div>
         <div className="w-full my-5 border"></div>
         <div className="flex flex-wrap items-center gap-5">
-          <button className="px-8 py-3 font-medium text-blue-500 rounded-full bg-blue-50">
+          <button className="px-8 py-3 font-medium text-blue-500 rounded-full bg-base-200">
             Category : {category}
           </button>
-          <button className="px-8 py-3 font-medium text-green-500 rounded-full bg-green-50">
+          <button className="px-8 py-3 font-medium text-green-500 rounded-full bg-base-200">
             Rating : {rating}
           </button>
           <Link

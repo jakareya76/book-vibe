@@ -68,11 +68,14 @@ const BookDetails = () => {
           <span className="text-xl font-medium">Review : </span>
           <span>{review}</span>
         </p>
-        <div className="flex items-center gap-5 my-5 font-semibold text-[#23BE0A]">
-          <h4 className="text-xl font-bold text-black">Tags :</h4>
+        <div className="flex items-center gap-5 my-5 font-semibold">
+          <h4 className="text-xl font-bold ">Tags :</h4>
           {tags.map((tag, idx) => {
             return (
-              <span key={idx} className="px-5 py-2 bg-green-100 rounded-full">
+              <span
+                key={idx}
+                className="px-5 py-2 bg-base-200 rounded-full text-[#23BE0A]"
+              >
                 {tag}
               </span>
             );

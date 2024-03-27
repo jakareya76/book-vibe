@@ -13,7 +13,7 @@ const Book = ({ book }) => {
         <div className="flex items-center gap-5 my-5 font-semibold text-[#23BE0A]">
           {tags.map((tag, idx) => {
             return (
-              <span key={idx} className="px-5 py-2 bg-green-100 rounded-full">
+              <span key={idx} className="px-5 py-2 rounded-full bg-base-200">
                 {tag}
               </span>
             );

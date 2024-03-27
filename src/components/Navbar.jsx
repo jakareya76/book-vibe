@@ -1,6 +1,10 @@
+import { useState } from "react";
+
 import { Link, NavLink } from "react-router-dom";
 
 const Navbar = () => {
+  const [theme, setTheme] = useState("light");
+
   return (
     <header className="container mx-auto my-5">
       <nav className="navbar bg-base-100">
@@ -34,8 +38,8 @@ const Navbar = () => {
                 to="/"
                 className={({ isActive }) =>
                   isActive
-                    ? "bg-white py-2 px-4 rounded-md text-green-500 border border-green-500"
-                    : "text-black py-2 px-4 rounded-md"
+                    ? "py-2 px-4 rounded-md text-green-500 border border-green-500"
+                    : "py-2 px-4 rounded-md "
                 }
               >
                 Home
@@ -45,8 +49,8 @@ const Navbar = () => {
                 to="/listed-books"
                 className={({ isActive }) =>
                   isActive
-                    ? "bg-white py-2 px-4 rounded-md text-green-500 border border-green-500"
-                    : "text-black py-2 px-4 rounded-md"
+                    ? "py-2 px-4 rounded-md text-green-500 border border-green-500"
+                    : "py-2 px-4 rounded-md "
                 }
               >
                 Listed Books
@@ -56,11 +60,33 @@ const Navbar = () => {
                 to="/pages-to-read"
                 className={({ isActive }) =>
                   isActive
-                    ? "bg-white py-2 px-4 rounded-md text-green-500 border border-green-500"
-                    : "text-black py-2 px-4 rounded-md"
+                    ? "py-2 px-4 rounded-md text-green-500 border border-green-500"
+                    : "py-2 px-4 rounded-md "
                 }
               >
                 Pages to Read
+              </NavLink>
+
+              <NavLink
+                to="/blogs"
+                className={({ isActive }) =>
+                  isActive
+                    ? "py-2 px-4 rounded-md text-green-500 border border-green-500"
+                    : "py-2 px-4 rounded-md "
+                }
+              >
+                Blogs
+              </NavLink>
+
+              <NavLink
+                to="/contact"
+                className={({ isActive }) =>
+                  isActive
+                    ? "py-2 px-4 rounded-md text-green-500 border border-green-500"
+                    : "py-2 px-4 rounded-md "
+                }
+              >
+                Contact Us
               </NavLink>
             </ul>
           </div>
@@ -74,8 +100,8 @@ const Navbar = () => {
               to="/"
               className={({ isActive }) =>
                 isActive
-                  ? "bg-white py-2 px-4 rounded-md text-green-500 border border-green-500"
-                  : "text-black py-2 px-4 rounded-md"
+                  ? "py-2 px-4 rounded-md text-green-500 border border-green-500"
+                  : "py-2 px-4 rounded-md "
               }
             >
               Home
@@ -85,8 +111,8 @@ const Navbar = () => {
               to="/listed-books"
               className={({ isActive }) =>
                 isActive
-                  ? "bg-white py-2 px-4 rounded-md text-green-500 border border-green-500"
-                  : "text-black py-2 px-4 rounded-md"
+                  ? "py-2 px-4 rounded-md text-green-500 border border-green-500"
+                  : "py-2 px-4 rounded-md "
               }
             >
               Listed Books
@@ -96,8 +122,8 @@ const Navbar = () => {
               to="/pages-to-read"
               className={({ isActive }) =>
                 isActive
-                  ? "bg-white py-2 px-4 rounded-md text-green-500 border border-green-500"
-                  : "text-black py-2 px-4 rounded-md"
+                  ? "py-2 px-4 rounded-md text-green-500 border border-green-500"
+                  : `py-2 px-4 rounded-md`
               }
             >
               Pages to Read
@@ -107,8 +133,8 @@ const Navbar = () => {
               to="/blogs"
               className={({ isActive }) =>
                 isActive
-                  ? "bg-white py-2 px-4 rounded-md text-green-500 border border-green-500"
-                  : "text-black py-2 px-4 rounded-md"
+                  ? "py-2 px-4 rounded-md text-green-500 border border-green-500"
+                  : "py-2 px-4 rounded-md "
               }
             >
               Blogs
@@ -118,15 +144,54 @@ const Navbar = () => {
               to="/contact"
               className={({ isActive }) =>
                 isActive
-                  ? "bg-white py-2 px-4 rounded-md text-green-500 border border-green-500"
-                  : "text-black py-2 px-4 rounded-md"
+                  ? "py-2 px-4 rounded-md text-green-500 border border-green-500"
+                  : "py-2 px-4 rounded-md "
               }
             >
               Contact Us
             </NavLink>
           </ul>
         </div>
+
         <div className="gap-4 navbar-end">
+          <div>
+            <label className="grid cursor-pointer place-items-center">
+              <input
+                type="checkbox"
+                value="dark"
+                className="col-span-2 col-start-1 row-start-1 toggle theme-controller bg-base-content"
+              />
+              <svg
+                className="col-start-1 row-start-1 stroke-base-100 fill-base-100"
+                xmlns="http://www.w3.org/2000/svg"
+                width="14"
+                height="14"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              >
+                <circle cx="12" cy="12" r="5" />
+                <path d="M12 1v2M12 21v2M4.2 4.2l1.4 1.4M18.4 18.4l1.4 1.4M1 12h2M21 12h2M4.2 19.8l1.4-1.4M18.4 5.6l1.4-1.4" />
+              </svg>
+              <svg
+                className="col-start-2 row-start-1 stroke-base-100 fill-base-100"
+                xmlns="http://www.w3.org/2000/svg"
+                width="14"
+                height="14"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              >
+                <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+              </svg>
+            </label>
+          </div>
           <a className="btn bg-[#23BE0A] text-white hover:bg-[#49a13c]">
             Sign In
           </a>

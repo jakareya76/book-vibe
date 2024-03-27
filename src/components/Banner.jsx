@@ -3,7 +3,7 @@ import heroImage from "../assets/hero.png";
 
 const Banner = () => {
   return (
-    <section className="bg-[#1313130e] lg:min-h-[550px] py-16 px-10 md:px-28 rounded-2xl my-5">
+    <section className="bg-base-200 lg:min-h-[550px] py-16 px-10 md:px-28 rounded-2xl my-5">
       <div className="flex flex-col-reverse items-center justify-between gap-8 md:flex-row">
         <div>
           <h2 className="text-3xl md:text-4xl lg:text-6xl font-bold max-w-[620px] font-serif leading-snug mb-10">
