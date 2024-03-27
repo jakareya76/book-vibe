@@ -1,5 +1,5 @@
-import { FaRegStar } from "react-icons/fa6";
 import { Link } from "react-router-dom";
+import StarIcon from "../assets/1.svg";
 
 const Book = ({ book }) => {
   const { bookId, bookName, author, image, rating, tags, category } = book;
@@ -30,7 +30,8 @@ const Book = ({ book }) => {
 
           <div className="flex items-center gap-3">
             <span className="font-medium">{rating}</span>
-            <FaRegStar size={20} />
+
+            <img src={StarIcon} alt="star-icon" />
           </div>
         </div>
       </div>

@@ -1,7 +1,8 @@
 import { Link } from "react-router-dom";
-import { GrLocation } from "react-icons/gr";
-import { BsPeople } from "react-icons/bs";
-import { MdOutlineLibraryBooks } from "react-icons/md";
+
+import peopleIcon from "../assets/2.svg";
+import pageIcon from "../assets/3.svg";
+import locationIcon from "../assets/4.svg";
 
 const ListedBookCard = ({ book }) => {
   const {
@@ -37,7 +38,7 @@ const ListedBookCard = ({ book }) => {
             );
           })}
           <div className="flex items-center gap-2">
-            <GrLocation size={20} color="#333" />
+            <img src={locationIcon} alt="icon" />
 
             <h2 className="font-medium text-black">
               Year of Publishing: {yearOfPublishing}
@@ -46,11 +47,11 @@ const ListedBookCard = ({ book }) => {
         </div>
         <div className="flex items-center gap-8 my-8">
           <div className="flex items-center gap-2">
-            <BsPeople size={22} />
+            <img src={peopleIcon} alt="icon" />
             <p className="text-xl font-medium">Publisher: {publisher}</p>
           </div>
           <div className="flex items-center gap-2">
-            <MdOutlineLibraryBooks size={22} />
+            <img src={pageIcon} alt="icon" />
             <p className="text-xl font-medium">Page: {totalPages}</p>
           </div>
         </div>
